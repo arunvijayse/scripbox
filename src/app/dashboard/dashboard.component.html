@@ -1,0 +1,56 @@
+<div class="breadcrumb-toolbar">
+    Dashboard
+</div>
+
+<div class="table-container mat-elevation-z8">
+
+    <mat-table [dataSource]="dataSource" matSort>
+
+        <!-- empId Column -->
+        <ng-container matColumnDef="empId">
+            <mat-header-cell *matHeaderCellDef> Employee Id </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.empId}} </mat-cell>
+        </ng-container>
+
+        <!-- title Column -->
+        <ng-container matColumnDef="title">
+            <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.title}} </mat-cell>
+        </ng-container>
+
+        <!-- description Column -->
+        <ng-container matColumnDef="description">
+            <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.description}} </mat-cell>
+        </ng-container>
+
+        <!-- tags Column -->
+        <ng-container matColumnDef="tags">
+            <mat-header-cell *matHeaderCellDef> Tags </mat-header-cell>
+            <mat-cell *matCellDef="let row" > {{row.tags}} </mat-cell>
+        </ng-container>
+        <!-- createdDate Column -->
+        <ng-container matColumnDef="date">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Created Date </mat-header-cell>
+            <mat-cell *matCellDef="let row" > {{row.date  | date:'short'}} </mat-cell>
+        </ng-container>
+        <!-- vote Column -->
+        <ng-container matColumnDef="votes">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Votes </mat-header-cell>
+            <mat-cell *matCellDef="let row" > {{row.votes}} </mat-cell>
+        </ng-container>
+        <!-- option Column -->
+        <ng-container matColumnDef="option">
+            <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+            <mat-cell *matCellDef="let row" >
+
+            </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;">
+        </mat-row>
+    </mat-table>
+
+    <mat-paginator #paginator [pageSizeOptions]="[ 10, 25, 100]"></mat-paginator>
+</div>

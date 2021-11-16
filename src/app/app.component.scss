@@ -1,0 +1,16 @@
+.primary-menu{
+ background-color: #343a40;
+ padding: 10px 20px;
+ color: white;
+ display: flex;
+ justify-content: space-between;
+ .menu-left{
+    display: flex;
+     .mat-raised-button {
+         margin-right: 20px;
+     }
+     .nav-item{
+         color: #fff;
+     }
+ }
+}

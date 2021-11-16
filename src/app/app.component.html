@@ -1,0 +1,16 @@
+<div class="primary-menu" *ngIf="currentUser">
+  <div class="menu-left">
+    <a class="nav-item nav-link" routerLink="/" routerLinkActive="active">Dashboard</a>
+    <a class="nav-item nav-link" routerLink="/challenge" >New Challenge</a>
+  </div>
+  <div class="menu-right">
+    <button mat-button [matMenuTriggerFor]="belowMenu">{{currentUser.empId}}</button>
+    <mat-menu #belowMenu="matMenu" yPosition="below">
+      <button mat-menu-item (click)="logout()">LogOut</button>
+    </mat-menu>
+  </div>
+</div>
+
+<!-- nav ends -->
+
+<router-outlet></router-outlet>
